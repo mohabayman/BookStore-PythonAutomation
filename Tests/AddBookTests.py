@@ -4,6 +4,7 @@ from PageObjects.LoginPage import LoginPage
 from PageObjects.AdminPage import AdminPage
 from PageObjects.BooksPage import BooksPage
 from PageObjects.AddBookPage import AddBookPage
+from Utils.DriverFactory import DriverFactory
 from time import sleep
 
 
@@ -11,7 +12,7 @@ class AddBookTests(object):
 
     @staticmethod
     def add_book():
-        driver = webdriver.Edge(executable_path='../MicrosoftWebDriver.exe')
+        driver = DriverFactory.get_driver('Edge')
         driver.get('http://10.1.23.10/bookstore')
         sleep(1)
         home_page = HomePage(driver)

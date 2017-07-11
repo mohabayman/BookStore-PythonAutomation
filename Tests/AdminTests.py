@@ -2,6 +2,7 @@ from selenium import webdriver
 from PageObjects.AdminPage import AdminPage
 from PageObjects.HomePage import HomePage
 from PageObjects.LoginPage import LoginPage
+from Utils.DriverFactory import DriverFactory
 from time import sleep
 
 
@@ -9,7 +10,7 @@ class AdminTests(object):
 
     @staticmethod
     def admin_members():
-        driver = webdriver.Edge(executable_path='../MicrosoftWebDriver.exe')
+        driver = DriverFactory.get_driver('Edge')
         driver.get('http://10.1.23.10/bookstore')
         sleep(1)
         home_page = HomePage(driver)

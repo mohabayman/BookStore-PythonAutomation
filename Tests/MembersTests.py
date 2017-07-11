@@ -3,6 +3,7 @@ from PageObjects.HomePage import HomePage
 from PageObjects.LoginPage import LoginPage
 from PageObjects.AdminPage import AdminPage
 from PageObjects.MembersPage import MembersPage
+from Utils.DriverFactory import DriverFactory
 from time import sleep
 
 
@@ -10,7 +11,7 @@ class MembersTests(object):
 
     @staticmethod
     def members_insert():
-        driver = webdriver.Edge(executable_path='../MicrosoftWebDriver.exe')
+        driver = DriverFactory.get_driver('Edge')
         driver.get('http://10.1.23.10/bookstore')
         sleep(1)
         home_page = HomePage(driver)
