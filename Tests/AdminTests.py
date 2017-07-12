@@ -1,4 +1,3 @@
-from selenium import webdriver
 from PageObjects.AdminPage import AdminPage
 from PageObjects.HomePage import HomePage
 from PageObjects.LoginPage import LoginPage
