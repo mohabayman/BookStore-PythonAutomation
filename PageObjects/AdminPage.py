@@ -1,11 +1,12 @@
 from selenium.webdriver.common.by import By
 from Utils.EdgeSupport import EdgeSupport
+from Page import Page
 
 
-class AdminPage(object):
+class AdminPage(Page):
     def __init__(self, driver):
         # Driver
-        self.driver = driver
+        Page.__init__(self, driver)
         # Locator
         self.MembersLink_txt_loc = (By.ID, 'Form_Field1')
         self.BooksLink_txt_loc = (By.ID, 'Form_Field3')
