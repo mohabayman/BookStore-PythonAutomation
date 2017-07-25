@@ -1,9 +1,9 @@
 from selenium.webdriver.common.by import By
 from Utils.EdgeSupport import EdgeSupport
-from Page import Page
+from Utils.BasePage import BasePage
 
 
-class LoginPage(Page):
+class LoginPage(BasePage):
     def __init__(self, driver):
         # Driver
         Page.__init__(self, driver)
