@@ -1,16 +1,22 @@
 pipeline {
   agent none
   stages {
-    stage('Branch1') {
+    stage('Lower Envs') {
       parallel {
-        stage('Branch1') {
+        stage('Dev') {
           steps {
             build 'Job1.1'
+            build 'Job1.2'
           }
         }
-        stage('Branch2') {
+        stage('US T') {
           steps {
             build 'Job2.1'
+          }
+        }
+        stage('EU T') {
+          steps {
+            build 'Job1.2'
           }
         }
       }
